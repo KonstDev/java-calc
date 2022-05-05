@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">kCalc</string>
+    <string name="ke">Тяночку бы!</string>
+    <string name="kek">Тяночку бы!</string>
+    <string name="button">Button</string>
+    <string name="textview">TextView</string>
+    <string name="_5">5</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+</resources>
