@@ -12,9 +12,10 @@ import de.congrace.exp4j.Calculable;
 import de.congrace.exp4j.ExpressionBuilder;
 import de.congrace.exp4j.UnknownFunctionException;
 import de.congrace.exp4j.UnparsableExpressionException;
+import com.example.myapplication.actions.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    private Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bDot, bC, bResult, bPlus, bMinus, bDevide;
+    private Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bDot, bC, bResult, bPlus, bMinus, bDevide, bDelete, bMultiply;
     private TextView base;
     private String str = "";
     String TAG = "appLOG";
@@ -32,12 +33,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         b7 = findViewById(R.id.btn7);
         b8 = findViewById(R.id.btn8);
         b9 = findViewById(R.id.btn9);
+        bMultiply = findViewById(R.id.btnMultiply);
         bDot = findViewById(R.id.btnDot);
         bC = findViewById(R.id.btnClear);
         bResult = findViewById(R.id.btnResult);
         bPlus = findViewById(R.id.btnPlus);
         bDot = findViewById(R.id.btnDot);
         bMinus = findViewById(R.id.btnMinus);
+        bDelete = findViewById(R.id.btnDelete);
         bDevide = findViewById(R.id.btnDevide);
         base = findViewById(R.id.base);
 
@@ -55,13 +58,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bMinus.setOnClickListener(this);
         bDot.setOnClickListener(this);
         bC.setOnClickListener(this);
+        bMultiply.setOnClickListener(this);
         bDevide.setOnClickListener(this);
+        bDelete.setOnClickListener(this);
         bResult.setOnClickListener(this);
-        //button = findViewById(R.id.button);
-        //tvSmth = findViewById(R.id.tvS);
-        //button.setOnClickListener(this);
-
-        //tvSmth.setOnClickListener(this);
         Log.d(TAG, "onCreate: ");
     }
     @Override
@@ -195,17 +195,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 base.setText(str);
                 break;
             case R.id.btnResult:
-                Calculable calc = null;
-                try {
-                    calc = new ExpressionBuilder(str).build();
-                    double result = calc.calculate();
-                    str = String.valueOf(result);
-                    //Log.d(TAG, "onClick: ");
-                } catch (Exception e) {
-                    str = "Math Error";
-                }
+                str = com.example.myapplication.actions.result.get_result(str);
                 base.setText(str);
                 break;
+            case R.id.btnDelete:
+                //Log.d(TAG, "onClickDel: ");
+                str =  com.example.myapplication.actions.delete.del(str);
+                base.setText(str);
+                break;
+            case R.id.btnMultiply:
+                str = com.example.myapplication.actions.multiply.multiply(str);
+                base.setText(str);
         }
 
     }
