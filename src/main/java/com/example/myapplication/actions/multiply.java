@@ -12,10 +12,6 @@ public class multiply {
                 if (!(c1 == '*'))
                     ev += '*';
             }
-            else if (len == 1 && !com.example.myapplication.actions.other.checkSymb(ev))
-            {
-                ev += '*';
-            }
         }
         return ev;
      }

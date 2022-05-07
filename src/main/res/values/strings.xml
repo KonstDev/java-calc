@@ -20,4 +20,11 @@
     <string name="_0">0</string>
     <string name="dot">.</string>
     <string name="multiply">*</string>
+    <string name="authorInfo">
+        made by Kanstantsin Khushenski\\n
+        Aloney Yitzhak cfar haNoar\\n
+        2022</string>
+    <string name="about_text">
+    made by Kanstantsin Khushenski;\
+    <i>In school Aloney Yitzhak</i></string>
 </resources>

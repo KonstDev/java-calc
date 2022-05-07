@@ -10,7 +10,8 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    private Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bDot, bC, bResult, bPlus, bMinus, bDevide, bDelete, bMultiply;
+    private Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bDot, bC, bResult, bPlus, bMinus, bDevide, bDelete, bMultiply, bOptions;
+    Boolean finished = false;
     private TextView base;
     private String str = "";
     String TAG = "appLOG";
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bDelete = findViewById(R.id.btnDelete);
         bDevide = findViewById(R.id.btnDevide);
         base = findViewById(R.id.base);
+        bOptions = findViewById(R.id.btnOptions);
 
         b0.setOnClickListener(this);
         b1.setOnClickListener(this);
@@ -57,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bDevide.setOnClickListener(this);
         bDelete.setOnClickListener(this);
         bResult.setOnClickListener(this);
+        bOptions.setOnClickListener(this);
+
         Log.d(TAG, "onCreate: ");
     }
     @Override
@@ -101,64 +105,53 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId())
         {
             case R.id.btn0:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "0";
+                com.example.myapplication.actions.number.number(str, 0, finished);
+                finished = false;
                 base.setText(str);
-                Log.d(TAG, str);
             break;
             case R.id.btn1:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "1";
+                str = com.example.myapplication.actions.number.number(str, 1, finished);
+                finished = false;
                 base.setText(str);
             break;
             case R.id.btn2:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "2";
+                str = com.example.myapplication.actions.number.number(str, 2, finished);
+                finished = false;
                 base.setText(str);
                 break;
             case R.id.btn3:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "3";
+                str = com.example.myapplication.actions.number.number(str, 3, finished);
+                finished = false;
                 base.setText(str);
                 break;
             case R.id.btn4:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "4";
+                str = com.example.myapplication.actions.number.number(str, 4, finished);
+                finished = false;
                 base.setText(str);
                 break;
             case R.id.btn5:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "5";
+                str = com.example.myapplication.actions.number.number(str, 5, finished);
+                finished = false;
                 base.setText(str);
                 break;
             case R.id.btn6:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "6";
+                str = com.example.myapplication.actions.number.number(str, 6, finished);
+                finished = false;
                 base.setText(str);
                 break;
             case R.id.btn7:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "7";
+                str = com.example.myapplication.actions.number.number(str, 7, finished);
+                finished = false;
                 base.setText(str);
                 break;
             case R.id.btn8:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "8";
+                str = com.example.myapplication.actions.number.number(str, 8, finished);
+                finished = false;
                 base.setText(str);
                 break;
             case R.id.btn9:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "9";
+                str = com.example.myapplication.actions.number.number(str, 9, finished);
+                finished = false;
                 base.setText(str);
                 break;
             case R.id.btnPlus:
@@ -171,6 +164,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnMinus:
                 str = com.example.myapplication.actions.minus.minus(str);
+                finished = false;
                 base.setText(str);
                 break;
             case R.id.btnDot:
@@ -183,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnResult:
                 str = com.example.myapplication.actions.result.get_result(str);
+                finished = true;
                 base.setText(str);
                 break;
             case R.id.btnDelete:

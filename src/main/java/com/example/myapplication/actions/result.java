@@ -2,6 +2,7 @@ package com.example.myapplication.actions;
 import de.congrace.exp4j.Calculable;
 import de.congrace.exp4j.ExpressionBuilder;
 
+//TODO: fix big integers
 
 public class result {
     private static String check_0(double ev)
@@ -16,14 +17,12 @@ public class result {
         else return String.valueOf(ev);
 
     }
-
     public static String get_result (String ev)
     {
         Calculable calc = null;
         try {
             calc = new ExpressionBuilder(ev).build();
             double result = calc.calculate();
-
             ev = check_0(result);
             //Log.d(TAG, "onClick: ");
         } catch (Exception e) {
