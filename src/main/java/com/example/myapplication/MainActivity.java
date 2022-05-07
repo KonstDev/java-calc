@@ -167,27 +167,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 base.setText(str);
                 break;
             case R.id.btnPlus:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "+";
+                str = com.example.myapplication.actions.plus.plus(str);
                 base.setText(str);
                 break;
             case R.id.btnDevide:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "/";
+                str = com.example.myapplication.actions.devide.devide(str);
                 base.setText(str);
                 break;
             case R.id.btnMinus:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += "-";
+                str = com.example.myapplication.actions.minus.minus(str);
                 base.setText(str);
                 break;
             case R.id.btnDot:
-                if (str.equals("Math Error"))
-                    str = "";
-                str += ".";
+                str = com.example.myapplication.actions.dot.dot(str);
                 base.setText(str);
                 break;
             case R.id.btnClear:
