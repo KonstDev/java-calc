@@ -11,6 +11,8 @@ public class result {
             u = (int) ev;
         if (u != 0)
             return String.valueOf(u);
+        else if (u == 0.0)
+            return "0";
         else return String.valueOf(ev);
 
     }
