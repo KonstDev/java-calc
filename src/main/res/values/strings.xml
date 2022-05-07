@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ay-calc</string>
+    <string name="app_name">torchCalc</string>
     <string name="button">Button</string>
     <string name="textview">TextView</string>
     <string name="_5">5</string>

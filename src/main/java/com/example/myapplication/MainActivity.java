@@ -8,11 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import de.congrace.exp4j.Calculable;
-import de.congrace.exp4j.ExpressionBuilder;
-import de.congrace.exp4j.UnknownFunctionException;
-import de.congrace.exp4j.UnparsableExpressionException;
-import com.example.myapplication.actions.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bDot, bC, bResult, bPlus, bMinus, bDevide, bDelete, bMultiply;
@@ -191,7 +186,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 base.setText(str);
                 break;
             case R.id.btnDelete:
-                //Log.d(TAG, "onClickDel: ");
                 str =  com.example.myapplication.actions.delete.del(str);
                 base.setText(str);
                 break;

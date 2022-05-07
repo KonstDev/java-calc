@@ -6,7 +6,7 @@ public class devide {
         if (ev.length() > 0)
         {
             char check = ev.charAt(ev.length() - 1);
-            if (check != '/')
+            if (check != '/' && com.example.myapplication.actions.other.checkSymb(ev))
                 ev += '/';
         }
         return ev;
