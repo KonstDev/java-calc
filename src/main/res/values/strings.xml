@@ -27,4 +27,5 @@
     <string name="about_text">
     made by Kanstantsin Khushenski;\
     <i>In school Aloney Yitzhak</i></string>
+    <string name="powerOf">^</string>
 </resources>

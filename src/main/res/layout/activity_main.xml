@@ -186,4 +186,13 @@
         android:layout_alignRight="@id/btn6"
         android:text="@string/_9" />
 
+    <Button
+        android:id="@+id/btnpowerOf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn9"
+        android:layout_alignRight="@id/btn9"
+        android:text="@string/powerOf" />
+
+
 </RelativeLayout>

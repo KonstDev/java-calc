@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    private Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bDot, bC, bResult, bPlus, bMinus, bDevide, bDelete, bMultiply, bOptions;
+    private Button b0, b1, b2, b3, b4, b5, b6, b7, b8, b9, bDot, bC, bResult, bPlus, bMinus, bDevide, bDelete, bMultiply, bOptions, bpowerOf;
     Boolean finished = false;
     private TextView base;
     private String str = "";
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bDevide = findViewById(R.id.btnDevide);
         base = findViewById(R.id.base);
         bOptions = findViewById(R.id.btnOptions);
+        bpowerOf = findViewById(R.id.btnpowerOf);
 
         b0.setOnClickListener(this);
         b1.setOnClickListener(this);
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bDelete.setOnClickListener(this);
         bResult.setOnClickListener(this);
         bOptions.setOnClickListener(this);
-
+        bpowerOf.setOnClickListener(this);
         Log.d(TAG, "onCreate: ");
     }
     @Override
@@ -186,6 +187,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btnMultiply:
                 str = com.example.myapplication.actions.multiply.multiply(str);
+                base.setText(str);
+            case R.id.btnpowerOf:
+                str = com.example.myapplication.actions.powerOf.powerOf(str);
                 base.setText(str);
         }
 

@@ -1,27 +1,14 @@
 package com.example.myapplication.actions;
 import static java.math.BigDecimal.ROUND_DOWN;
-
 import java.math.BigDecimal;
 import java.math.*;
 
 import de.congrace.exp4j.Calculable;
 import de.congrace.exp4j.ExpressionBuilder;
-//TODO: fix big integers
+
 
 public class result {
     BigDecimal I;
-    private static String check_0(double ev)
-    {
-        Integer u = 0;
-        if (ev % 1 == 0)
-            u = (int) ev;
-        if (u != 0)
-            return String.valueOf(u);
-        else if (u == 0.0)
-            return "0";
-        else return String.valueOf(ev);
-
-    }
     public static String get_result (String ev)
     {
         Calculable calc = null;
@@ -29,6 +16,10 @@ public class result {
             calc = new ExpressionBuilder(ev).build();
             BigDecimal result = new BigDecimal(calc.calculate());
             ev = (result.setScale(10, ROUND_DOWN)).toString();
+            if (com.example.myapplication.actions.other.checkZeros(ev))
+            {
+                ev = (result.setScale(0, ROUND_DOWN)).toString();
+            }
             //Log.d(TAG, "onClick: ");
         } catch (Exception e) {
             ev = "Math Error";
