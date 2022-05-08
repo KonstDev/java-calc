@@ -1,6 +1,7 @@
 package com.example.myapplication.actions;
+import static java.math.BigDecimal.ROUND_DOWN;
+
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.math.*;
 
 import de.congrace.exp4j.Calculable;
@@ -27,7 +28,7 @@ public class result {
         try {
             calc = new ExpressionBuilder(ev).build();
             BigDecimal result = new BigDecimal(calc.calculate());
-            ev = result.toString();
+            ev = (result.setScale(10, ROUND_DOWN)).toString();
             //Log.d(TAG, "onClick: ");
         } catch (Exception e) {
             ev = "Math Error";
